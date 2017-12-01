@@ -32,7 +32,8 @@ public class CaptchaSolver {
 	}
 
 	private static int getNextIndex(String string, int currentIndex) {
-		return string.length() - 1 == currentIndex ? 0 : currentIndex + 1;
+		int index = (string.length() / 2) + currentIndex;
+		return (index >= string.length()) ? index - string.length() : index;
 	}
 
 }
