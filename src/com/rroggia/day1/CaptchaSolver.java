@@ -9,10 +9,8 @@ public class CaptchaSolver {
 
 	public static void main(String[] args) throws IOException {
 
-		Scanner scanner = null;
+		try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("./src/com/rroggia/day1/puzzleInput")));) {
 
-		try {
-			scanner = new Scanner(new BufferedReader(new FileReader("./src/com/rroggia/day1/puzzleInput")));
 			String puzzleInput = scanner.next();
 
 			int firstValue;
@@ -30,10 +28,6 @@ public class CaptchaSolver {
 
 			System.out.println(sum);
 
-		} finally {
-			if (scanner != null) {
-				scanner.close();
-			}
 		}
 	}
 
